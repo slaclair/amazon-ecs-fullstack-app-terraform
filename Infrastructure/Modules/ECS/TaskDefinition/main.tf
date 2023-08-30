@@ -39,10 +39,16 @@ resource "aws_ecs_task_definition" "ecs_task_definition" {
         }
     ]
     DEFINITION
+  tags = {
+    Privacy = ""
+  }
 }
 
 # ------- CloudWatch Logs groups to store ecs-containers logs -------
 resource "aws_cloudwatch_log_group" "TaskDF-Log_Group" {
   name              = "/ecs/task-definition-${var.name}"
   retention_in_days = 30
+  tags = {
+    Privacy = ""
+  }
 }

@@ -9,6 +9,9 @@
 resource "aws_codedeploy_app" "main" {
   compute_platform = "ECS"
   name             = var.name
+  tags = {
+    Privacy = ""
+  }
 }
 
 # ------- AWS CodeDeploy Group for each CodeDeploy App created -------
@@ -74,5 +77,8 @@ resource "aws_codedeploy_deployment_group" "main" {
 
   lifecycle {
     ignore_changes = [blue_green_deployment_config]
+  }
+  tags = {
+    Privacy = ""
   }
 }
