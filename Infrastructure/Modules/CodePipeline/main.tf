@@ -111,4 +111,7 @@ resource "aws_codepipeline" "aws_codepipeline" {
     ignore_changes = [stage[0].action[0].configuration]
   }
 
+  tags = {
+    Privacy = ""
+  }
 }

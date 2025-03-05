@@ -79,6 +79,9 @@ resource "aws_cloudwatch_metric_alarm" "high-memory-policy-alarm" {
     "ClusterName" = var.cluster_name
   }
 
+  tags = {
+    Privacy = ""
+  }
 }
 
 # ------- High CPU alarm -------
@@ -98,4 +101,7 @@ resource "aws_cloudwatch_metric_alarm" "high-cpu-policy-alarm" {
     "ClusterName" = var.cluster_name
   }
 
+  tags = {
+    Privacy = ""
+  }
 }

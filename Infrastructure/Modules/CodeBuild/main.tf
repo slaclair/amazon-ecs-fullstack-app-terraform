@@ -93,4 +93,7 @@ resource "aws_codebuild_project" "aws_codebuild" {
     type      = "CODEPIPELINE"
     buildspec = var.buildspec_path
   }
+  tags = {
+    Privacy = ""
+  }
 }
